@@ -76,12 +76,17 @@ if button_calculate:
     
 #image_url_family = f"https://source.unsplash.com/1440x1280/?grandparents family"
 #st.image(image_url_family, use_column_width=True)
+
+
+import requests
 from PIL import Image
+from io import BytesIO
 
 image_url_family = "https://source.unsplash.com/1440x1280/?grandparents,family"
 
-# 从 URL 中打开图像
-image = Image.open(image_url_family)
+# 下载图像并保存到本地
+response = requests.get(image_url_family)
+image = Image.open(BytesIO(response.content))
 
 # 调整图像大小
 desired_width = 600  # 设定所需的宽度
