@@ -74,5 +74,20 @@ button_calculate = st.button("計算")
 if button_calculate:
     calculate_remaining_time()
     
-image_url_family = f"https://source.unsplash.com/1440x1280/?grandparents family"
-st.image(image_url_family, use_column_width=True)
+#image_url_family = f"https://source.unsplash.com/1440x1280/?grandparents family"
+#st.image(image_url_family, use_column_width=True)
+from PIL import Image
+
+image_url_family = "https://source.unsplash.com/1440x1280/?grandparents,family"
+
+# 从 URL 中打开图像
+image = Image.open(image_url_family)
+
+# 调整图像大小
+desired_width = 600  # 设定所需的宽度
+aspect_ratio = image.width / image.height
+desired_height = int(desired_width / aspect_ratio)
+resized_image = image.resize((desired_width, desired_height))
+
+# 在 Streamlit 中展示调整大小后的图像
+st.image(resized_image, use_column_width=True)
