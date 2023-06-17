@@ -20,7 +20,7 @@ def calculate_remaining_time():
         remaining_days = (total_hours % (30 * 24)) // 24
         remaining_hours = total_hours % 24
 
-        result = "您和對方\n還有"
+        result = "您和對方<br>還有"
 
         if remaining_years > 0:
             result += f"{remaining_years}年"
@@ -34,9 +34,10 @@ def calculate_remaining_time():
         if remaining_hours > 0:
             result += f"{remaining_hours}個小時"
 
-        result += "\n的時間可以相處"
+        result += "<br>的時間可以相處"
 
-        st.info(result)
+        st.markdown(result, unsafe_allow_html=True)
+
 
         
 
