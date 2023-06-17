@@ -34,9 +34,13 @@ def calculate_remaining_time():
         if remaining_hours > 0:
             result += f"{remaining_hours}個小時"
 
-        result += "<br>的時間可以和對方相處"
+        result += "的時間<br>可以和對方相處"
 
-        st.markdown(result, unsafe_allow_html=True)
+        font_size = 18
+
+        # 使用字符串格式化将变量应用于 HTML 标签中
+        styled_text = "<font size='{}'>{}</font>".format(font_size, result)
+        st.markdown(styled_text, unsafe_allow_html=True)
 
 
         
