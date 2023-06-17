@@ -20,7 +20,7 @@ def calculate_remaining_time():
         remaining_days = (total_hours % (30 * 24)) // 24
         remaining_hours = total_hours % 24
 
-        result = f"您和對方預計還有{remaining_years}年{remaining_months}個月{remaining_days}天{remaining_hours}個小時的時間可以相處"
+        result = f"您和對方\n還有{remaining_years}年{remaining_months}個月{remaining_days}天{remaining_hours}個小時\n的時間可以相處"
 
         st.info(result)
 
