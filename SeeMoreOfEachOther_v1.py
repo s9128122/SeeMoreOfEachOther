@@ -13,19 +13,11 @@ def calculate_remaining_time():
             return
 
         if period_type == '每月':
-            meetings_per_month = st.checkbox("每個月碰面")
-            if meetings_per_month:
-                st.session_state['entry_meetings'] = st.number_input("每個月碰面次數：", value=1, step=1)
-            else:
-                st.session_state['entry_meetings'] = 0
+            months_remaining = (average_age - current_age) * 12
+            total_hours = months_remaining * meetings_per_period * hours_per_meeting
         else:
-            meetings_per_year = st.checkbox("每年碰面")
-            if meetings_per_year:
-                st.session_state['entry_meetings'] = st.selectbox("每年碰面次數：", list(range(1, 13)))
-            else:
-                st.session_state['entry_meetings'] = 0
-
-        
+            years_remaining = average_age - current_age
+            total_hours = years_remaining * meetings_per_period * hours_per_meeting
 
         remaining_years = total_hours // (365 * 24)
         remaining_months = (total_hours % (365 * 24)) // (30 * 24)
