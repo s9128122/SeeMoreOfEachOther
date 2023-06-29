@@ -75,23 +75,6 @@ st.session_state['entry_hours'] = st.selectbox("每次碰面時間（小時）�
 button_calculate = st.button("計算")
 if button_calculate:
     calculate_remaining_time()
-'''
-import requests
-from PIL import Image
-from io import BytesIO
 
-image_url_family = "https://source.unsplash.com/1440x1280/?grandparents,family"
 
-# 下载图像并保存到本地
-response = requests.get(image_url_family)
-image = Image.open(BytesIO(response.content))
 
-# 调整图像大小
-desired_width = 600  # 设定所需的宽度
-aspect_ratio = image.width / image.height
-desired_height = int(desired_width / aspect_ratio)
-resized_image = image.resize((desired_width, desired_height))
-
-# 在 Streamlit 中展示调整大小后的图像
-st.image(resized_image, use_column_width=True)
-'''
