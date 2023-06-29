@@ -75,7 +75,7 @@ st.session_state['entry_hours'] = st.selectbox("每次碰面時間（小時）�
 button_calculate = st.button("計算")
 if button_calculate:
     calculate_remaining_time()
-
+'''
 import requests
 from PIL import Image
 from io import BytesIO
@@ -94,3 +94,4 @@ resized_image = image.resize((desired_width, desired_height))
 
 # 在 Streamlit 中展示调整大小后的图像
 st.image(resized_image, use_column_width=True)
+'''
